@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Bewerbro.Enums
 {
-    internal class ApplicationStatus
+    public enum ApplicationStatus
     {
+        Draft,
+        Sent,
+        InReview,
+        Interview,
+        Offer,
+        Rejected
     }
 }
