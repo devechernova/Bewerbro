@@ -70,6 +70,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Ansprechpartner.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\JobPosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
