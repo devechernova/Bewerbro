@@ -18,5 +18,13 @@ namespace Bewerbro.Models
         public int MatchScore { get; set; }
 
         public string Notes { get; set; }
+
+        public List<Interview> Interviews { get; set; } = new List<Interview>();
+
+        public List<Document> Documents { get; set; } = new List<Document>();
+
+        public List<InterviewQuestion> InterviewQuestions { get; set; } = new List<InterviewQuestion>();
+
+        public List<CareerNote> CareerNotes { get; set; } = new List<CareerNote>();
     }
 }
