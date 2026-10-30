@@ -72,7 +72,11 @@
   <ItemGroup>
     <Compile Include="Models\Ansprechpartner.cs" />
     <Compile Include="Models\Application.cs" />
+    <Compile Include="Models\CareerNote.cs" />
     <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\Document.cs" />
+    <Compile Include="Models\Interview.cs" />
+    <Compile Include="Models\InterviewQuestion.cs" />
     <Compile Include="Models\JobPosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
