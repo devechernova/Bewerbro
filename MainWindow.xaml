@@ -6,64 +6,198 @@
         xmlns:local="clr-namespace:Bewerbro"
         mc:Ignorable="d"
         Title="Bewerbro"
-Height="700"
-Width="1200">
-    
+        Height="700"
+        Width="1200"
+        Background="#F8F8FA">
+
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="55"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Header -->
+        <!-- HEADER -->
 
         <Border Grid.Row="0"
-            Background="#2C3E50">
+                Background="#1F2937">
 
             <TextBlock Text="{Binding ApplicationTitle}"
-                   Foreground="White"
-                   FontSize="22"
-                   FontWeight="Bold"
-                   VerticalAlignment="Center"
-                   Margin="15,0,0,0"/>
+                       Foreground="White"
+                       FontSize="24"
+                       FontWeight="SemiBold"
+                       VerticalAlignment="Center"
+                       Margin="25,0,0,0"/>
+
         </Border>
 
-        <!-- Navigation -->
+        <!-- NAVIGATION -->
 
-        <StackPanel Grid.Row="1"
-                Orientation="Horizontal"
-                Background="#ECF0F1">
+        <Border Grid.Row="1"
+                Background="#F8F8FA">
 
-            <Button Content="Dashboard"
-                Width="120"
-                Margin="5"/>
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        Margin="15,0,0,0">
 
-            <Button Content="Companies"
-                Width="120"
-                Margin="5"/>
+                <Button Content="Dashboard"
+                        Width="120"
+                        Height="34"
+                        Margin="5"
+                        Background="#DFE0E5"
+                        BorderThickness="0"
+                        Padding="10,0"/>
 
-            <Button Content="Applications"
-                Width="120"
-                Margin="5"/>
+                <Button Content="Companies"
+                        Width="120"
+                        Height="34"
+                        Margin="5"
+                        Background="#DFE0E5"
+                        BorderThickness="0"
+                        Padding="10,0"/>
 
-            <Button Content="Interviews"
-                Width="120"
-                Margin="5"/>
-        </StackPanel>
+                <Button Content="Applications"
+                        Width="120"
+                        Height="34"
+                        Margin="5"
+                        Background="#DFE0E5"
+                        BorderThickness="0"
+                        Padding="10,0"/>
 
-        <!-- Content Area -->
+                <Button Content="Interviews"
+                        Width="120"
+                        Height="34"
+                        Margin="5"
+                        Background="#DFE0E5"
+                        BorderThickness="0"
+                        Padding="10,0"/>
 
-        <Grid Grid.Row="2">
+            </StackPanel>
 
-            <TextBlock Text="Arbeitsbereich"
-                   FontSize="24"
-                   Foreground="Gray"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
+        </Border>
+
+        <!-- DASHBOARD -->
+
+        <Grid Grid.Row="2"
+              Margin="15">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="200"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Bewerbungen -->
+
+            <Border Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="16"
+                    Padding="20"
+                    Background="#DFE0E5"
+                    CornerRadius="18">
+
+                <StackPanel VerticalAlignment="Center">
+
+                    <TextBlock Text="Bewerbungen"
+                               FontSize="18"
+                               Foreground="#1F2937"
+                               HorizontalAlignment="Center"/>
+
+                    <TextBlock Text="0"
+                               FontSize="46"
+                               FontWeight="SemiBold"
+                               Foreground="#1F2937"
+                               HorizontalAlignment="Center"/>
+
+                </StackPanel>
+
+            </Border>
+
+            <!-- Interviews -->
+
+            <Border Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="16"
+                    Padding="20"
+                    Background="#C5C0C9"
+                    CornerRadius="18">
+
+                <StackPanel VerticalAlignment="Center">
+
+                    <TextBlock Text="Interviews"
+                               FontSize="18"
+                               Foreground="#1F2937"
+                               HorizontalAlignment="Center"/>
+
+                    <TextBlock Text="0"
+                               FontSize="46"
+                               FontWeight="SemiBold"
+                               Foreground="#1F2937"
+                               HorizontalAlignment="Center"/>
+
+                </StackPanel>
+
+            </Border>
+
+            <!-- Zusagen -->
+
+            <Border Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="16"
+                    Padding="20"
+                    Background="#8A7C9C"
+                    CornerRadius="18">
+
+                <StackPanel VerticalAlignment="Center">
+
+                    <TextBlock Text="Zusagen"
+                               FontSize="18"
+                               Foreground="White"
+                               HorizontalAlignment="Center"/>
+
+                    <TextBlock Text="0"
+                               FontSize="46"
+                               FontWeight="SemiBold"
+                               Foreground="White"
+                               HorizontalAlignment="Center"/>
+
+                </StackPanel>
+
+            </Border>
+
+            <!-- Absagen -->
+
+            <Border Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="16"
+                    Padding="20"
+                    Background="#4D3F72"
+                    CornerRadius="18">
+
+                <StackPanel VerticalAlignment="Center">
+
+                    <TextBlock Text="Absagen"
+                               FontSize="18"
+                               Foreground="White"
+                               HorizontalAlignment="Center"/>
+
+                    <TextBlock Text="0"
+                               FontSize="46"
+                               FontWeight="SemiBold"
+                               Foreground="White"
+                               HorizontalAlignment="Center"/>
+
+                </StackPanel>
+
+            </Border>
 
         </Grid>
 
     </Grid>
+
 </Window>
