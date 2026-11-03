@@ -19,10 +19,12 @@ namespace Bewerbro.ViewModels
                 OnPropertyChanged();
             }
         }
-
+        public DashboardViewModel Dashboard { get; set; }
         public MainViewModel()
         {
             ApplicationTitle = "Bewerbro - Dein smarter Bewerbungsassistent";
+            Dashboard = new DashboardViewModel();
+
         }
     }
 }

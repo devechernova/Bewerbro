@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Bewerbro"
         mc:Ignorable="d"
         Title="Bewerbro"
         Height="700"
@@ -18,7 +17,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- HEADER -->
+        <!-- Header -->
 
         <Border Grid.Row="0"
                 Background="#1F2937">
@@ -32,59 +31,54 @@
 
         </Border>
 
-        <!-- NAVIGATION -->
+        <!-- Navigation -->
 
         <Border Grid.Row="1"
                 Background="#F8F8FA">
 
             <StackPanel Orientation="Horizontal"
-                        VerticalAlignment="Center"
-                        Margin="15,0,0,0">
+                        Margin="15,5">
 
                 <Button Content="Dashboard"
                         Width="120"
                         Height="34"
                         Margin="5"
                         Background="#DFE0E5"
-                        BorderThickness="0"
-                        Padding="10,0"/>
+                        BorderThickness="0"/>
 
                 <Button Content="Companies"
                         Width="120"
                         Height="34"
                         Margin="5"
                         Background="#DFE0E5"
-                        BorderThickness="0"
-                        Padding="10,0"/>
+                        BorderThickness="0"/>
 
                 <Button Content="Applications"
                         Width="120"
                         Height="34"
                         Margin="5"
                         Background="#DFE0E5"
-                        BorderThickness="0"
-                        Padding="10,0"/>
+                        BorderThickness="0"/>
 
                 <Button Content="Interviews"
                         Width="120"
                         Height="34"
                         Margin="5"
                         Background="#DFE0E5"
-                        BorderThickness="0"
-                        Padding="10,0"/>
+                        BorderThickness="0"/>
 
             </StackPanel>
 
         </Border>
 
-        <!-- DASHBOARD -->
+        <!-- Dashboard -->
 
         <Grid Grid.Row="2"
               Margin="15">
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="200"/>
-                <RowDefinition Height="200"/>
+                <RowDefinition Height="220"/>
+                <RowDefinition Height="220"/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -96,8 +90,7 @@
 
             <Border Grid.Row="0"
                     Grid.Column="0"
-                    Margin="16"
-                    Padding="20"
+                    Margin="10"
                     Background="#DFE0E5"
                     CornerRadius="18">
 
@@ -108,7 +101,7 @@
                                Foreground="#1F2937"
                                HorizontalAlignment="Center"/>
 
-                    <TextBlock Text="0"
+                    <TextBlock Text="{Binding Dashboard.ApplicationCount}"
                                FontSize="46"
                                FontWeight="SemiBold"
                                Foreground="#1F2937"
@@ -122,8 +115,7 @@
 
             <Border Grid.Row="0"
                     Grid.Column="1"
-                    Margin="16"
-                    Padding="20"
+                    Margin="10"
                     Background="#C5C0C9"
                     CornerRadius="18">
 
@@ -134,7 +126,7 @@
                                Foreground="#1F2937"
                                HorizontalAlignment="Center"/>
 
-                    <TextBlock Text="0"
+                    <TextBlock Text="{Binding Dashboard.InterviewCount}"
                                FontSize="46"
                                FontWeight="SemiBold"
                                Foreground="#1F2937"
@@ -148,8 +140,7 @@
 
             <Border Grid.Row="1"
                     Grid.Column="0"
-                    Margin="16"
-                    Padding="20"
+                    Margin="10"
                     Background="#8A7C9C"
                     CornerRadius="18">
 
@@ -160,7 +151,7 @@
                                Foreground="White"
                                HorizontalAlignment="Center"/>
 
-                    <TextBlock Text="0"
+                    <TextBlock Text="{Binding Dashboard.OfferCount}"
                                FontSize="46"
                                FontWeight="SemiBold"
                                Foreground="White"
@@ -174,8 +165,7 @@
 
             <Border Grid.Row="1"
                     Grid.Column="1"
-                    Margin="16"
-                    Padding="20"
+                    Margin="10"
                     Background="#4D3F72"
                     CornerRadius="18">
 
@@ -186,7 +176,7 @@
                                Foreground="White"
                                HorizontalAlignment="Center"/>
 
-                    <TextBlock Text="0"
+                    <TextBlock Text="{Binding Dashboard.RejectionCount}"
                                FontSize="46"
                                FontWeight="SemiBold"
                                Foreground="White"
