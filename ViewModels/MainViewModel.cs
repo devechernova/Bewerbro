@@ -34,12 +34,15 @@ namespace Bewerbro.ViewModels
 
         public CompaniesViewModel Companies { get; set; }
 
+        public InterviewsViewModel Interviews { get; set; }
+
         public ICommand ShowDashboardCommand { get; set; }
 
         public ICommand ShowApplicationsCommand { get; set; }
 
         public ICommand ShowCompaniesCommand { get; set; }
 
+        public ICommand ShowInterviewsCommand { get; set; }
         public MainViewModel()
         {
             ApplicationTitle = "Bewerbro - Dein smarter Bewerbungsassistent";
@@ -59,6 +62,11 @@ namespace Bewerbro.ViewModels
 
             ShowApplicationsCommand =
                 new RelayCommand(ShowApplications);
+
+            Interviews = new InterviewsViewModel();
+
+            ShowInterviewsCommand =
+                new RelayCommand(ShowInterviews);
         }
 
         private void ShowDashboard()
@@ -74,6 +82,11 @@ namespace Bewerbro.ViewModels
         private void ShowCompanies()
         {
             CurrentViewModel = Companies;
+        }
+
+        private void ShowInterviews()
+        {
+            CurrentViewModel = Interviews;
         }
     }
 }

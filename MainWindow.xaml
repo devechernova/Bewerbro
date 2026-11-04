@@ -25,6 +25,10 @@
             <views:CompaniesView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type vm:InterviewsViewModel}">
+            <views:InterviewsView/>
+        </DataTemplate>
+
     </Window.Resources>
 
     <Grid>
@@ -86,7 +90,8 @@
                         Height="34"
                         Margin="5"
                         Background="#DFE0E5"
-                        BorderThickness="0"/>
+                        BorderThickness="0"
+                        Command="{Binding ShowInterviewsCommand}"/>
 
             </StackPanel>
 
