@@ -33,7 +33,7 @@
                        Foreground="#1F2937"
                        HorizontalAlignment="Center"/>
 
-                <TextBlock Text="{Binding Dashboard.ApplicationCount}"
+                <TextBlock Text="{Binding ApplicationCount}"
                        FontSize="46"
                        FontWeight="SemiBold"
                        Foreground="#1F2937"
@@ -58,7 +58,7 @@
                        Foreground="#1F2937"
                        HorizontalAlignment="Center"/>
 
-                <TextBlock Text="{Binding Dashboard.InterviewCount}"
+                <TextBlock Text="{Binding InterviewCount}"
                        FontSize="46"
                        FontWeight="SemiBold"
                        Foreground="#1F2937"
@@ -83,7 +83,7 @@
                        Foreground="White"
                        HorizontalAlignment="Center"/>
 
-                <TextBlock Text="{Binding Dashboard.OfferCount}"
+                <TextBlock Text="{Binding OfferCount}"
                        FontSize="46"
                        FontWeight="SemiBold"
                        Foreground="White"
@@ -108,7 +108,7 @@
                        Foreground="White"
                        HorizontalAlignment="Center"/>
 
-                <TextBlock Text="{Binding Dashboard.RejectionCount}"
+                <TextBlock Text="{Binding RejectionCount}"
                        FontSize="46"
                        FontWeight="SemiBold"
                        Foreground="White"

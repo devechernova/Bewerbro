@@ -9,6 +9,7 @@ namespace Bewerbro.ViewModels
     public class MainViewModel : BaseViewModel
     {
         private string _applicationTitle;
+        private BaseViewModel _currentViewModel;
 
         public string ApplicationTitle
         {
@@ -19,11 +20,24 @@ namespace Bewerbro.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public BaseViewModel CurrentViewModel
+        {
+            get { return _currentViewModel; }
+            set
+            {
+                _currentViewModel = value;
+                OnPropertyChanged();
+            }
+        }
         public DashboardViewModel Dashboard { get; set; }
         public MainViewModel()
         {
             ApplicationTitle = "Bewerbro - Dein smarter Bewerbungsassistent";
+
             Dashboard = new DashboardViewModel();
+
+            CurrentViewModel = Dashboard;
 
         }
     }
