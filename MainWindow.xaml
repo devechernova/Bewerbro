@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:Bewerbro.Views"
         mc:Ignorable="d"
         Title="Bewerbro"
         Height="700"
@@ -69,125 +70,13 @@
 
             </StackPanel>
 
-        </Border>
-
-        <!-- Dashboard -->
-
-        <Grid Grid.Row="2"
-              Margin="15">
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="220"/>
-                <RowDefinition Height="220"/>
-            </Grid.RowDefinitions>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <!-- Bewerbungen -->
-
-            <Border Grid.Row="0"
-                    Grid.Column="0"
-                    Margin="10"
-                    Background="#DFE0E5"
-                    CornerRadius="18">
-
-                <StackPanel VerticalAlignment="Center">
-
-                    <TextBlock Text="Bewerbungen"
-                               FontSize="18"
-                               Foreground="#1F2937"
-                               HorizontalAlignment="Center"/>
-
-                    <TextBlock Text="{Binding Dashboard.ApplicationCount}"
-                               FontSize="46"
-                               FontWeight="SemiBold"
-                               Foreground="#1F2937"
-                               HorizontalAlignment="Center"/>
-
-                </StackPanel>
+       
 
             </Border>
 
-            <!-- Interviews -->
+            <views:DashboardView Grid.Row="2"/>
 
-            <Border Grid.Row="0"
-                    Grid.Column="1"
-                    Margin="10"
-                    Background="#C5C0C9"
-                    CornerRadius="18">
-
-                <StackPanel VerticalAlignment="Center">
-
-                    <TextBlock Text="Interviews"
-                               FontSize="18"
-                               Foreground="#1F2937"
-                               HorizontalAlignment="Center"/>
-
-                    <TextBlock Text="{Binding Dashboard.InterviewCount}"
-                               FontSize="46"
-                               FontWeight="SemiBold"
-                               Foreground="#1F2937"
-                               HorizontalAlignment="Center"/>
-
-                </StackPanel>
-
-            </Border>
-
-            <!-- Zusagen -->
-
-            <Border Grid.Row="1"
-                    Grid.Column="0"
-                    Margin="10"
-                    Background="#8A7C9C"
-                    CornerRadius="18">
-
-                <StackPanel VerticalAlignment="Center">
-
-                    <TextBlock Text="Zusagen"
-                               FontSize="18"
-                               Foreground="White"
-                               HorizontalAlignment="Center"/>
-
-                    <TextBlock Text="{Binding Dashboard.OfferCount}"
-                               FontSize="46"
-                               FontWeight="SemiBold"
-                               Foreground="White"
-                               HorizontalAlignment="Center"/>
-
-                </StackPanel>
-
-            </Border>
-
-            <!-- Absagen -->
-
-            <Border Grid.Row="1"
-                    Grid.Column="1"
-                    Margin="10"
-                    Background="#4D3F72"
-                    CornerRadius="18">
-
-                <StackPanel VerticalAlignment="Center">
-
-                    <TextBlock Text="Absagen"
-                               FontSize="18"
-                               Foreground="White"
-                               HorizontalAlignment="Center"/>
-
-                    <TextBlock Text="{Binding Dashboard.RejectionCount}"
-                               FontSize="46"
-                               FontWeight="SemiBold"
-                               Foreground="White"
-                               HorizontalAlignment="Center"/>
-
-                </StackPanel>
-
-            </Border>
-
-        </Grid>
-
+        
     </Grid>
 
 </Window>
