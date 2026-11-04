@@ -4,11 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:Bewerbro.Views"
+        xmlns:vm="clr-namespace:Bewerbro.ViewModels"
         mc:Ignorable="d"
         Title="Bewerbro"
         Height="700"
         Width="1200"
         Background="#F8F8FA">
+    
+    <Window.Resources>
+
+        <DataTemplate DataType="{x:Type vm:DashboardViewModel}">
+            <views:DashboardView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:ApplicationsViewModel}">
+            <views:ApplicationsView/>
+        </DataTemplate>
+
+    </Window.Resources>
 
     <Grid>
 
@@ -74,10 +87,10 @@
 
             </Border>
 
-            <views:DashboardView Grid.Row="2"
-                                 />
+        <ContentControl Grid.Row="2"
+                Content="{Binding CurrentViewModel}"/>
 
-        
+
     </Grid>
 
 </Window>
