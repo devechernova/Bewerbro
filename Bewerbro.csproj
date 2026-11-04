@@ -58,10 +58,14 @@
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="ViewModels\ApplicationsViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\CompaniesViewModel.cs" />
     <Compile Include="ViewModels\DashboardViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\ApplicationsView.xaml.cs">
       <DependentUpon>ApplicationsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CompaniesView.xaml.cs">
+      <DependentUpon>CompaniesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DashboardView.xaml.cs">
       <DependentUpon>DashboardView.xaml</DependentUpon>
@@ -80,6 +84,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\ApplicationsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CompaniesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

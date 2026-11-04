@@ -21,6 +21,10 @@
             <views:ApplicationsView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type vm:CompaniesViewModel}">
+            <views:CompaniesView/>
+        </DataTemplate>
+
     </Window.Resources>
 
     <Grid>
@@ -66,7 +70,8 @@
                         Height="34"
                         Margin="5"
                         Background="#DFE0E5"
-                        BorderThickness="0"/>
+                        BorderThickness="0"
+                        Command="{Binding ShowCompaniesCommand}"/>
 
                 <Button Content="Applications"
                         Width="120"

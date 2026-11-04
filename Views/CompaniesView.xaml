@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="Bewerbro.Views.CompaniesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="15">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Companies"
+                   FontSize="28"
+                   FontWeight="SemiBold"
+                   Margin="0,0,0,15"/>
+
+        <DataGrid Grid.Row="1"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding Companies}"
+                  CanUserAddRows="False"
+                  IsReadOnly="True">
+
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Company"
+                                    Binding="{Binding Name}"
+                                    Width="*" />
+
+                <DataGridTextColumn Header="City"
+                                    Binding="{Binding City}"
+                                    Width="*" />
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+    </Grid>
+
+</UserControl>

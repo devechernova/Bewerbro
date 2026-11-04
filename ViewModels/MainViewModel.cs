@@ -32,9 +32,13 @@ namespace Bewerbro.ViewModels
 
         public ApplicationsViewModel Applications { get; set; }
 
+        public CompaniesViewModel Companies { get; set; }
+
         public ICommand ShowDashboardCommand { get; set; }
 
         public ICommand ShowApplicationsCommand { get; set; }
+
+        public ICommand ShowCompaniesCommand { get; set; }
 
         public MainViewModel()
         {
@@ -43,6 +47,10 @@ namespace Bewerbro.ViewModels
             Dashboard = new DashboardViewModel();
 
             Applications = new ApplicationsViewModel();
+
+            Companies = new CompaniesViewModel();
+
+            ShowCompaniesCommand = new RelayCommand(ShowCompanies);
 
             CurrentViewModel = Dashboard;
 
@@ -61,6 +69,11 @@ namespace Bewerbro.ViewModels
         private void ShowApplications()
         {
             CurrentViewModel = Applications;
+        }
+
+        private void ShowCompanies()
+        {
+            CurrentViewModel = Companies;
         }
     }
 }
