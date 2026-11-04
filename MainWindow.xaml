@@ -58,7 +58,8 @@
                         Height="34"
                         Margin="5"
                         Background="#DFE0E5"
-                        BorderThickness="0"/>
+                        BorderThickness="0"
+                        Command="{Binding ShowDashboardCommand}"/>
 
                 <Button Content="Companies"
                         Width="120"
@@ -72,7 +73,8 @@
                         Height="34"
                         Margin="5"
                         Background="#DFE0E5"
-                        BorderThickness="0"/>
+                        BorderThickness="0"
+                        Command="{Binding ShowApplicationsCommand}"/>
 
                 <Button Content="Interviews"
                         Width="120"

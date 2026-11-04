@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows.Input;
+using Bewerbro.Commands;
 
 namespace Bewerbro.ViewModels
 {
@@ -30,15 +27,40 @@ namespace Bewerbro.ViewModels
                 OnPropertyChanged();
             }
         }
+
         public DashboardViewModel Dashboard { get; set; }
+
+        public ApplicationsViewModel Applications { get; set; }
+
+        public ICommand ShowDashboardCommand { get; set; }
+
+        public ICommand ShowApplicationsCommand { get; set; }
+
         public MainViewModel()
         {
             ApplicationTitle = "Bewerbro - Dein smarter Bewerbungsassistent";
 
             Dashboard = new DashboardViewModel();
 
+            Applications = new ApplicationsViewModel();
+
             CurrentViewModel = Dashboard;
 
+            ShowDashboardCommand =
+                new RelayCommand(ShowDashboard);
+
+            ShowApplicationsCommand =
+                new RelayCommand(ShowApplications);
+        }
+
+        private void ShowDashboard()
+        {
+            CurrentViewModel = Dashboard;
+        }
+
+        private void ShowApplications()
+        {
+            CurrentViewModel = Applications;
         }
     }
 }
