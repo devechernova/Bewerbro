@@ -1,4 +1,6 @@
 ﻿using System.Collections.ObjectModel;
+using System.Windows.Input;
+using Bewerbro.Commands;
 
 namespace Bewerbro.ViewModels
 {
@@ -6,8 +8,11 @@ namespace Bewerbro.ViewModels
     {
         private string _newCompanyName;
         private string _newCompanyCity;
+        private string _newCompanyWebsite;
 
         public ObservableCollection<CompanyItem> Companies { get; set; }
+
+        public ICommand AddCompanyCommand { get; set; }
 
         public string NewCompanyName
         {
@@ -29,8 +34,6 @@ namespace Bewerbro.ViewModels
             }
         }
 
-        private string _newCompanyWebsite;
-
         public string NewCompanyWebsite
         {
             get { return _newCompanyWebsite; }
@@ -40,8 +43,11 @@ namespace Bewerbro.ViewModels
                 OnPropertyChanged();
             }
         }
+
         public CompaniesViewModel()
         {
+            AddCompanyCommand = new RelayCommand(AddCompany);
+
             Companies = new ObservableCollection<CompanyItem>()
             {
                 new CompanyItem
@@ -55,7 +61,7 @@ namespace Bewerbro.ViewModels
                 {
                     Name = "Vector Informatik",
                     City = "Stuttgart",
-                     Website = "https://vector.com"
+                    Website = "https://vector.com"
                 },
 
                 new CompanyItem
@@ -69,9 +75,30 @@ namespace Bewerbro.ViewModels
                 {
                     Name = "msg systems",
                     City = "Karlsruhe",
-                     Website = "https://www.msg.group"
+                    Website = "https://www.msg.group"
                 }
             };
+        }
+
+        private void AddCompany()
+        {
+            if (string.IsNullOrWhiteSpace(NewCompanyName))
+                return;
+
+            Companies.Add(new CompanyItem
+            {
+                Name = NewCompanyName,
+                City = NewCompanyCity,
+                Website = NewCompanyWebsite
+            });
+
+            NewCompanyName = "";
+            NewCompanyCity = "";
+            NewCompanyWebsite = "";
+
+            OnPropertyChanged(nameof(NewCompanyName));
+            OnPropertyChanged(nameof(NewCompanyCity));
+            OnPropertyChanged(nameof(NewCompanyWebsite));
         }
     }
 

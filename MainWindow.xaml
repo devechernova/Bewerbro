@@ -13,7 +13,7 @@
 
     <Window.Resources>
 
-        <!-- Navigation Buttons -->
+        <!-- Navigation Button Style -->
 
         <Style x:Key="NavigationButtonStyle"
                TargetType="Button">
@@ -27,11 +27,11 @@
             <Setter Property="Margin"
                     Value="5"/>
 
-            <Setter Property="Background"
-                    Value="#DFE0E5"/>
-
             <Setter Property="Foreground"
                     Value="#1F2937"/>
+
+            <Setter Property="Background"
+                    Value="#DFE0E5"/>
 
             <Setter Property="BorderThickness"
                     Value="0"/>
@@ -39,20 +39,58 @@
             <Setter Property="Cursor"
                     Value="Hand"/>
 
-            <Style.Triggers>
+            <Setter Property="Template">
 
-                <Trigger Property="IsMouseOver"
-                         Value="True">
+                <Setter.Value>
 
-                    <Setter Property="Background"
-                            Value="#8A7C9C"/>
+                    <ControlTemplate TargetType="Button">
 
-                    <Setter Property="Foreground"
-                            Value="White"/>
+                        <Border x:Name="ButtonBorder"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="6">
 
-                </Trigger>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
 
-            </Style.Triggers>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <!-- Hover -->
+
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+
+                                <Setter TargetName="ButtonBorder"
+                                        Property="Background"
+                                        Value="#8A7C9C"/>
+
+                                <Setter Property="Foreground"
+                                        Value="White"/>
+
+                            </Trigger>
+
+                            <!-- Pressed -->
+
+                            <Trigger Property="IsPressed"
+                                     Value="True">
+
+                                <Setter TargetName="ButtonBorder"
+                                        Property="Background"
+                                        Value="#4D3F72"/>
+
+                                <Setter Property="Foreground"
+                                        Value="White"/>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
 
         </Style>
 
