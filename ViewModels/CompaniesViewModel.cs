@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using Bewerbro.Commands;
 using Bewerbro.Models;
+using Bewerbro.Services;
 
 namespace Bewerbro.ViewModels
 {
@@ -74,36 +75,8 @@ namespace Bewerbro.ViewModels
             DeleteCompanyCommand = new RelayCommand(DeleteCompany);
             UpdateCompanyCommand = new RelayCommand(UpdateCompany);
 
-            Companies = new ObservableCollection<CompanyItem>()
-            {
-                new CompanyItem
-                {
-                    Name = "NEXUS AG",
-                    City = "Karlsruhe",
-                    Website = "https://www.nexus-ag.de"
-                },
+            Companies = CompanyDataService.LoadCompanies();
 
-                new CompanyItem
-                {
-                    Name = "Vector Informatik",
-                    City = "Stuttgart",
-                    Website = "https://vector.com"
-                },
-
-                new CompanyItem
-                {
-                    Name = "dmTECH",
-                    City = "Karlsruhe",
-                    Website = "https://www.dmtech.de"
-                },
-
-                new CompanyItem
-                {
-                    Name = "msg systems",
-                    City = "Karlsruhe",
-                    Website = "https://www.msg.group"
-                }
-            };
         }
 
         private void AddCompany()
