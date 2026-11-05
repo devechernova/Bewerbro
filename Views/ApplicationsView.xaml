@@ -11,6 +11,7 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -19,12 +20,79 @@
                    FontWeight="SemiBold"
                    Margin="0,0,0,15"/>
 
-        <DataGrid Grid.Row="1"
+        <StackPanel Grid.Row="1"
+            Orientation="Horizontal"
+            Margin="0,0,0,15">
+
+            <StackPanel Margin="0,0,10,0">
+
+                <TextBlock Text="Position"
+                   Margin="0,0,0,5"/>
+
+                <TextBox Width="220"
+                 Text="{Binding NewJobTitle}" />
+
+            </StackPanel>
+
+            <StackPanel Margin="0,0,10,0">
+
+                <TextBlock Text="Company"
+                   Margin="0,0,0,5"/>
+
+                <TextBox Width="220"
+                 Text="{Binding NewCompany}" />
+
+            </StackPanel>
+
+            <StackPanel Margin="0,0,10,0">
+
+                <TextBlock Text="Status"
+                   Margin="0,0,0,5"/>
+
+                <TextBox Width="120"
+                 Text="{Binding NewStatus}" />
+
+            </StackPanel>
+
+            <StackPanel Margin="0,0,10,0">
+
+                <TextBlock Text="Application Date"
+                   Margin="0,0,0,5"/>
+
+                <TextBox Width="120"
+                 Text="{Binding NewApplicationDate}" />
+
+            </StackPanel>
+
+            <Button Content="Add"
+            Width="90"
+            Height="30"
+            VerticalAlignment="Bottom"
+            Margin="0,0,10,0"
+            Command="{Binding AddApplicationCommand}" />
+
+            <Button Content="Update"
+            Width="90"
+            Height="30"
+            VerticalAlignment="Bottom"
+            Margin="0,0,10,0"
+            Command="{Binding UpdateApplicationCommand}" />
+
+            <Button Content="Delete"
+            Width="90"
+            Height="30"
+            VerticalAlignment="Bottom"
+            Command="{Binding DeleteApplicationCommand}" />
+
+        </StackPanel>
+
+        <DataGrid Grid.Row="2"
                   AutoGenerateColumns="False"
                   HeadersVisibility="Column"
                   CanUserAddRows="False"
                   IsReadOnly="True"
-                  ItemsSource="{Binding Applications}">
+                  ItemsSource="{Binding Applications}"
+                  SelectedItem="{Binding SelectedApplication}">
 
             <DataGrid.Columns>
 
