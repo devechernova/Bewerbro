@@ -132,6 +132,56 @@
 
                     </Button>
 
+                    <Button Content="Delete"
+        Width="120"
+        Height="35"
+        Margin="10,0,0,0"
+        VerticalAlignment="Bottom"
+        Foreground="White"
+        BorderThickness="0"
+        Command="{Binding DeleteCompanyCommand}">
+
+                        <Button.Template>
+
+                            <ControlTemplate TargetType="Button">
+
+                                <Border x:Name="ButtonBorder"
+                    Background="#A25F88"
+                    CornerRadius="6">
+
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+
+                                </Border>
+
+                                <ControlTemplate.Triggers>
+
+                                    <Trigger Property="IsMouseOver"
+                         Value="True">
+
+                                        <Setter TargetName="ButtonBorder"
+                            Property="Background"
+                            Value="#D88AB8"/>
+
+                                    </Trigger>
+
+                                    <Trigger Property="IsPressed"
+                         Value="True">
+
+                                        <Setter TargetName="ButtonBorder"
+                            Property="Background"
+                            Value=" #944875"/>
+
+                                    </Trigger>
+
+                                </ControlTemplate.Triggers>
+
+                            </ControlTemplate>
+
+                        </Button.Template>
+
+                    </Button>
+
                 </StackPanel>
 
                 <!-- Companies Table -->
@@ -139,6 +189,7 @@
                 <DataGrid Grid.Row="2"
                           AutoGenerateColumns="False"
                           ItemsSource="{Binding Companies}"
+                          SelectedItem="{Binding SelectedCompany}"
                           CanUserAddRows="False"
                           IsReadOnly="True"
                           HeadersVisibility="Column"

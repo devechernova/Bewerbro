@@ -14,6 +14,8 @@ namespace Bewerbro.ViewModels
 
         public ICommand AddCompanyCommand { get; set; }
 
+        public ICommand DeleteCompanyCommand { get; set; }
+
         public string NewCompanyName
         {
             get { return _newCompanyName; }
@@ -44,9 +46,21 @@ namespace Bewerbro.ViewModels
             }
         }
 
+        private CompanyItem _selectedCompany;
+
+        public CompanyItem SelectedCompany
+        {
+            get { return _selectedCompany; }
+            set
+            {
+                _selectedCompany = value;
+                OnPropertyChanged();
+            }
+        }
         public CompaniesViewModel()
         {
             AddCompanyCommand = new RelayCommand(AddCompany);
+            DeleteCompanyCommand = new RelayCommand(DeleteCompany);
 
             Companies = new ObservableCollection<CompanyItem>()
             {
@@ -99,6 +113,14 @@ namespace Bewerbro.ViewModels
             OnPropertyChanged(nameof(NewCompanyName));
             OnPropertyChanged(nameof(NewCompanyCity));
             OnPropertyChanged(nameof(NewCompanyWebsite));
+        }
+
+        private void DeleteCompany()
+        {
+            if (SelectedCompany == null)
+                return;
+
+            Companies.Remove(SelectedCompany);
         }
     }
 
