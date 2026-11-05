@@ -77,6 +77,102 @@ namespace Bewerbro.ViewModels
 
             Companies = CompanyDataService.LoadCompanies();
 
+            if (Companies.Count == 0)
+            {
+                Companies = CreateDefaultCompanies();
+                CompanyDataService.SaveCompanies(Companies);
+            }
+
+        }
+
+        private ObservableCollection<CompanyItem> CreateDefaultCompanies()
+        {
+            return new ObservableCollection<CompanyItem>
+    {
+        new CompanyItem
+        {
+            Name = "CGM",
+            City = "Koblenz",
+            Website = "https://www.cgm.com"
+        },
+
+        new CompanyItem
+        {
+            Name = "medicalvalues",
+            City = "Karlsruhe",
+            Website = "https://www.medicalvalues.de"
+        },
+
+        new CompanyItem
+        {
+            Name = "generic.de software technologies AG",
+            City = "Karlsruhe",
+            Website = "https://www.generic.de"
+        },
+
+        new CompanyItem
+        {
+            Name = "TelemaxX",
+            City = "Karlsruhe",
+            Website = "https://www.telemaxx.de"
+        },
+
+        new CompanyItem
+        {
+            Name = "CAS Software AG",
+            City = "Karlsruhe",
+            Website = "https://www.cas.de"
+        },
+
+        new CompanyItem
+        {
+            Name = "Bosch",
+            City = "Karlsruhe",
+            Website = "https://www.bosch.de"
+        },
+
+        new CompanyItem
+        {
+            Name = "Fraunhofer IOSB",
+            City = "Karlsruhe",
+            Website = "https://www.iosb.fraunhofer.de"
+        },
+
+        new CompanyItem
+        {
+            Name = "Kinemic",
+            City = "Karlsruhe",
+            Website = "https://www.kinemic.com"
+        },
+
+        new CompanyItem
+        {
+            Name = "CodeWerk",
+            City = "Karlsruhe",
+            Website = "https://www.codewerk.de"
+        },
+
+        new CompanyItem
+        {
+            Name = "Evacorn",
+            City = "Karlsruhe",
+            Website = "https://www.evacorn.com"
+        },
+
+        new CompanyItem
+        {
+            Name = "Aicorn",
+            City = "Karlsruhe",
+            Website = "https://www.aicorn.de"
+        },
+
+        new CompanyItem
+        {
+            Name = "NEXUS AG",
+            City = "Donaueschingen",
+            Website = "https://www.nexus-ag.de"
+        }
+    };
         }
 
         private void AddCompany()
