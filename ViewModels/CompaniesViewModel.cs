@@ -1,8 +1,9 @@
-﻿using System.Collections.ObjectModel;
-using System.Windows.Input;
-using Bewerbro.Commands;
+﻿using Bewerbro.Commands;
 using Bewerbro.Models;
 using Bewerbro.Services;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Windows.Input;
 
 namespace Bewerbro.ViewModels
 {
@@ -91,6 +92,7 @@ namespace Bewerbro.ViewModels
     {
         new CompanyItem
         {
+            Id = 1,
             Name = "CGM",
             City = "Koblenz",
             Website = "https://www.cgm.com"
@@ -98,6 +100,7 @@ namespace Bewerbro.ViewModels
 
         new CompanyItem
         {
+            Id = 2,
             Name = "medicalvalues",
             City = "Karlsruhe",
             Website = "https://www.medicalvalues.de"
@@ -105,6 +108,7 @@ namespace Bewerbro.ViewModels
 
         new CompanyItem
         {
+            Id = 3,
             Name = "generic.de software technologies AG",
             City = "Karlsruhe",
             Website = "https://www.generic.de"
@@ -112,6 +116,7 @@ namespace Bewerbro.ViewModels
 
         new CompanyItem
         {
+            Id = 4,
             Name = "TelemaxX",
             City = "Karlsruhe",
             Website = "https://www.telemaxx.de"
@@ -119,6 +124,7 @@ namespace Bewerbro.ViewModels
 
         new CompanyItem
         {
+            Id = 5,
             Name = "CAS Software AG",
             City = "Karlsruhe",
             Website = "https://www.cas.de"
@@ -126,6 +132,7 @@ namespace Bewerbro.ViewModels
 
         new CompanyItem
         {
+            Id = 6,
             Name = "Bosch",
             City = "Karlsruhe",
             Website = "https://www.bosch.de"
@@ -133,6 +140,7 @@ namespace Bewerbro.ViewModels
 
         new CompanyItem
         {
+            Id = 7,
             Name = "Fraunhofer IOSB",
             City = "Karlsruhe",
             Website = "https://www.iosb.fraunhofer.de"
@@ -140,6 +148,7 @@ namespace Bewerbro.ViewModels
 
         new CompanyItem
         {
+            Id = 8,
             Name = "Kinemic",
             City = "Karlsruhe",
             Website = "https://www.kinemic.com"
@@ -147,6 +156,7 @@ namespace Bewerbro.ViewModels
 
         new CompanyItem
         {
+            Id = 9,
             Name = "CodeWerk",
             City = "Karlsruhe",
             Website = "https://www.codewerk.de"
@@ -154,6 +164,7 @@ namespace Bewerbro.ViewModels
 
         new CompanyItem
         {
+            Id = 10,
             Name = "Evacorn",
             City = "Karlsruhe",
             Website = "https://www.evacorn.com"
@@ -161,6 +172,7 @@ namespace Bewerbro.ViewModels
 
         new CompanyItem
         {
+            Id = 11,
             Name = "Aicorn",
             City = "Karlsruhe",
             Website = "https://www.aicorn.de"
@@ -168,6 +180,7 @@ namespace Bewerbro.ViewModels
 
         new CompanyItem
         {
+            Id = 12,
             Name = "NEXUS AG",
             City = "Donaueschingen",
             Website = "https://www.nexus-ag.de"
@@ -182,6 +195,7 @@ namespace Bewerbro.ViewModels
 
             Companies.Add(new CompanyItem
             {
+                Id = Companies.Count == 0 ? 1 : Companies.Max(c => c.Id) + 1,
                 Name = NewCompanyName,
                 City = NewCompanyCity,
                 Website = NewCompanyWebsite

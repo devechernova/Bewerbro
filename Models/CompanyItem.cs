@@ -9,6 +9,8 @@ namespace Bewerbro.Models
 {
     public class CompanyItem : BaseViewModel
     {
+        public int Id { get; set; }
+
         private string _name;
         private string _city;
         private string _website;

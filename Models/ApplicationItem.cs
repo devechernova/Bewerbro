@@ -4,6 +4,9 @@ namespace Bewerbro.Models
 {
     public class ApplicationItem : BaseViewModel
     {
+        public int Id { get; set; }
+        public int CompanyId { get; set; }
+
         private string _jobTitle;
         private string _company;
         private string _status;
