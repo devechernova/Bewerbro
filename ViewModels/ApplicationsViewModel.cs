@@ -12,7 +12,14 @@ namespace Bewerbro.ViewModels
 
         public ApplicationsViewModel()
         {
-            Applications = CreateDefaultApplications();
+            Applications = ApplicationDataService.LoadApplications();
+
+            if (Applications.Count == 0)
+            {
+                Applications = CreateDefaultApplications();
+
+                ApplicationDataService.SaveApplications(Applications);
+            }
         }
 
         private ObservableCollection<ApplicationItem> CreateDefaultApplications()
