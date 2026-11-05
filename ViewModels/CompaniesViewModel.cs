@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Bewerbro.Commands;
+using Bewerbro.Models;
 
 namespace Bewerbro.ViewModels
 {
@@ -125,15 +126,6 @@ namespace Bewerbro.ViewModels
             OnPropertyChanged(nameof(NewCompanyCity));
             OnPropertyChanged(nameof(NewCompanyWebsite));
         }
-
-        private void DeleteCompany()
-        {
-            if (SelectedCompany == null)
-                return;
-
-            Companies.Remove(SelectedCompany);
-        }
-
         private void UpdateCompany()
         {
             if (SelectedCompany == null)
@@ -143,42 +135,14 @@ namespace Bewerbro.ViewModels
             SelectedCompany.City = NewCompanyCity;
             SelectedCompany.Website = NewCompanyWebsite;
         }
-    }
 
-    public class CompanyItem : BaseViewModel
-    {
-        private string _name;
-        private string _city;
-        private string _website;
-
-        public string Name
+        private void DeleteCompany()
         {
-            get => _name;
-            set
-            {
-                _name = value;
-                OnPropertyChanged();
-            }
-        }
+            if (SelectedCompany == null)
+                return;
 
-        public string City
-        {
-            get => _city;
-            set
-            {
-                _city = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string Website
-        {
-            get => _website;
-            set
-            {
-                _website = value;
-                OnPropertyChanged();
-            }
+            Companies.Remove(SelectedCompany);
         }
     }
+
 }
