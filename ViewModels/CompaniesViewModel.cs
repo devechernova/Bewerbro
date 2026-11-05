@@ -16,6 +16,8 @@ namespace Bewerbro.ViewModels
 
         public ICommand DeleteCompanyCommand { get; set; }
 
+        public ICommand UpdateCompanyCommand { get; set; }
+
         public string NewCompanyName
         {
             get { return _newCompanyName; }
@@ -54,6 +56,14 @@ namespace Bewerbro.ViewModels
             set
             {
                 _selectedCompany = value;
+
+                if (_selectedCompany != null)
+                {
+                    NewCompanyName = _selectedCompany.Name;
+                    NewCompanyCity = _selectedCompany.City;
+                    NewCompanyWebsite = _selectedCompany.Website;
+                }
+
                 OnPropertyChanged();
             }
         }
@@ -61,6 +71,7 @@ namespace Bewerbro.ViewModels
         {
             AddCompanyCommand = new RelayCommand(AddCompany);
             DeleteCompanyCommand = new RelayCommand(DeleteCompany);
+            UpdateCompanyCommand = new RelayCommand(UpdateCompany);
 
             Companies = new ObservableCollection<CompanyItem>()
             {
@@ -122,14 +133,52 @@ namespace Bewerbro.ViewModels
 
             Companies.Remove(SelectedCompany);
         }
+
+        private void UpdateCompany()
+        {
+            if (SelectedCompany == null)
+                return;
+
+            SelectedCompany.Name = NewCompanyName;
+            SelectedCompany.City = NewCompanyCity;
+            SelectedCompany.Website = NewCompanyWebsite;
+        }
     }
 
-    public class CompanyItem
+    public class CompanyItem : BaseViewModel
     {
-        public string Name { get; set; }
+        private string _name;
+        private string _city;
+        private string _website;
 
-        public string City { get; set; }
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                _name = value;
+                OnPropertyChanged();
+            }
+        }
 
-        public string Website { get; set; }
+        public string City
+        {
+            get => _city;
+            set
+            {
+                _city = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Website
+        {
+            get => _website;
+            set
+            {
+                _website = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }
