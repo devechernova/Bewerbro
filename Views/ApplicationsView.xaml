@@ -29,16 +29,20 @@
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Company"
-                                    Binding="{Binding Company}"
-                                    Width="*"/>
+                        Binding="{Binding Company}"
+                        Width="2*" />
 
                 <DataGridTextColumn Header="Position"
-                                    Binding="{Binding Position}"
-                                    Width="2*"/>
+                        Binding="{Binding JobTitle}"
+                        Width="3*" />
 
                 <DataGridTextColumn Header="Status"
-                                    Binding="{Binding Status}"
-                                    Width="*"/>
+                        Binding="{Binding Status}"
+                        Width="*" />
+
+                <DataGridTextColumn Header="Application Date"
+                        Binding="{Binding ApplicationDate}"
+                        Width="*" />
 
             </DataGrid.Columns>
 
