@@ -35,8 +35,6 @@
                             Orientation="Horizontal"
                             Margin="0,0,0,20">
 
-                    <!-- Company -->
-
                     <StackPanel Margin="0,0,15,0">
 
                         <TextBlock Text="Company Name"
@@ -52,8 +50,6 @@
                                  Text="{Binding NewCompanyName}" />
 
                     </StackPanel>
-
-                    <!-- City -->
 
                     <StackPanel Margin="0,0,15,0">
 
@@ -71,8 +67,6 @@
 
                     </StackPanel>
 
-                    <!-- Website -->
-
                     <StackPanel Margin="0,0,15,0">
 
                         <TextBlock Text="Website"
@@ -89,8 +83,6 @@
 
                     </StackPanel>
 
-                    <!-- Button -->
-
                     <Button Content="Add Company"
                             Width="150"
                             Height="35"
@@ -101,7 +93,7 @@
 
                 </StackPanel>
 
-                <!-- DataGrid -->
+                <!-- Companies Table -->
 
                 <DataGrid Grid.Row="2"
                           AutoGenerateColumns="False"
@@ -114,9 +106,21 @@
                           BorderThickness="2"
                           GridLinesVisibility="None"
                           RowBackground="#F8F8FA"
-                          AlternatingRowBackground="#EDE8F3">
+                          AlternatingRowBackground="#EDE8F3"
+                          SelectionMode="Single">
 
-                    <!-- Header -->
+                    <DataGrid.Resources>
+
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                                         Color="#4D3F72"/>
+
+                        <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}"
+                                         Color="#4D3F72"/>
+
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}"
+                                         Color="White"/>
+
+                    </DataGrid.Resources>
 
                     <DataGrid.ColumnHeaderStyle>
 
@@ -137,36 +141,6 @@
                         </Style>
 
                     </DataGrid.ColumnHeaderStyle>
-
-                    <!-- Selected Row -->
-
-                    <DataGrid.RowStyle>
-
-                        <Style TargetType="DataGridRow">
-
-                            <Setter Property="Foreground"
-                                    Value="#1F2937"/>
-
-                            <Style.Triggers>
-
-                                <Trigger Property="IsSelected"
-                                         Value="True">
-
-                                    <Setter Property="Background"
-                                            Value="#4D3F72"/>
-
-                                    <Setter Property="Foreground"
-                                            Value="White"/>
-
-                                </Trigger>
-
-                            </Style.Triggers>
-
-                        </Style>
-
-                    </DataGrid.RowStyle>
-
-                    <!-- Columns -->
 
                     <DataGrid.Columns>
 
