@@ -91,6 +91,8 @@ namespace Bewerbro.ViewModels
                 Website = NewCompanyWebsite
             });
 
+            CompanyDataService.SaveCompanies(Companies);
+
             NewCompanyName = "";
             NewCompanyCity = "";
             NewCompanyWebsite = "";
@@ -107,6 +109,8 @@ namespace Bewerbro.ViewModels
             SelectedCompany.Name = NewCompanyName;
             SelectedCompany.City = NewCompanyCity;
             SelectedCompany.Website = NewCompanyWebsite;
+
+            CompanyDataService.SaveCompanies(Companies);
         }
 
         private void DeleteCompany()
@@ -115,6 +119,8 @@ namespace Bewerbro.ViewModels
                 return;
 
             Companies.Remove(SelectedCompany);
+
+            CompanyDataService.SaveCompanies(Companies);
         }
     }
 
