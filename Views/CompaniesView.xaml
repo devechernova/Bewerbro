@@ -9,6 +9,60 @@
 
     <Grid Margin="15">
 
+        <Grid.Resources>
+
+            <Style TargetType="TextBox">
+
+                <Setter Property="BorderBrush"
+                Value="#8A7C9C"/>
+
+                <Setter Property="BorderThickness"
+                Value="2"/>
+
+                <Setter Property="Background"
+                Value="White"/>
+
+                <Setter Property="FocusVisualStyle"
+                Value="{x:Null}"/>
+
+                <Setter Property="Template">
+
+                    <Setter.Value>
+
+                        <ControlTemplate TargetType="TextBox">
+
+                            <Border x:Name="Border"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}">
+
+                                <ScrollViewer x:Name="PART_ContentHost"/>
+
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+
+                                <Trigger Property="IsKeyboardFocused"
+                                 Value="True">
+
+                                    <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="#4D3F72"/>
+
+                                </Trigger>
+
+                            </ControlTemplate.Triggers>
+
+                        </ControlTemplate>
+
+                    </Setter.Value>
+
+                </Setter>
+
+            </Style>
+
+        </Grid.Resources>
+
         <Border Background="#DFE0E5"
                 CornerRadius="18"
                 Padding="20">

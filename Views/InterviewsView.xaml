@@ -61,7 +61,7 @@
 
             </Style>
 
-        </Grid.Resources>пше 
+        </Grid.Resources>
 
         <Border Background="#DFE0E5"
                 CornerRadius="18"
@@ -86,95 +86,100 @@
                 <!-- Input Area -->
 
                 <StackPanel Grid.Row="1"
-                            Margin="0,0,0,20">
+            Margin="0,0,0,20">
+
+                    <!-- Row 1 -->
 
                     <WrapPanel Margin="0,0,0,10">
 
                         <StackPanel Margin="0,0,15,0">
 
                             <TextBlock Text="Company"
-                                       Margin="0,0,0,5"/>
+                       Margin="0,0,0,5"/>
 
                             <TextBox Width="180"
-                                     Text="{Binding NewCompany}" />
+                     Text="{Binding NewCompany}" />
 
                         </StackPanel>
 
                         <StackPanel Margin="0,0,15,0">
 
                             <TextBlock Text="Position"
-                                       Margin="0,0,0,5"/>
+                       Margin="0,0,0,5"/>
 
-                            <TextBox Width="220"
-                                     Text="{Binding NewPosition}" />
+                            <TextBox Width="420"
+                     Text="{Binding NewPosition}" />
 
                         </StackPanel>
 
                         <StackPanel Margin="0,0,15,0">
 
                             <TextBlock Text="Date"
-                                       Margin="0,0,0,5"/>
+                       Margin="0,0,0,5"/>
 
                             <TextBox Width="100"
-                                     Text="{Binding NewInterviewDate}" />
+                     Text="{Binding NewInterviewDate}" />
 
                         </StackPanel>
 
                         <StackPanel Margin="0,0,15,0">
 
                             <TextBlock Text="Time"
-                                       Margin="0,0,0,5"/>
+                       Margin="0,0,0,5"/>
 
-                            <TextBox Width="90"
-                                     Text="{Binding NewInterviewTime}" />
-
-                        </StackPanel>
-
-                        <StackPanel Margin="0,0,15,0">
-
-                            <TextBlock Text="Status"
-                                       Margin="0,0,0,5"/>
-
-                            <TextBox Width="120"
-                                     Text="{Binding NewStatus}" />
-
-                        </StackPanel>
-
-                    </WrapPanel>
-
-                    <WrapPanel Margin="0,0,0,10">
-
-                        <StackPanel Margin="0,0,15,0">
-
-                            <TextBlock Text="Meeting Link / Address"
-                                       Margin="0,0,0,5"/>
-
-                            <TextBox Width="300"
-                                     Text="{Binding NewLocation}" />
+                            <TextBox Width="80"
+                     Text="{Binding NewInterviewTime}" />
 
                         </StackPanel>
 
                         <StackPanel Margin="0,0,15,0">
 
                             <TextBlock Text="Contact Person"
-                                       Margin="0,0,0,5"/>
+                       Margin="0,0,0,5"/>
 
-                            <TextBox Width="200"
-                                     Text="{Binding NewContactPerson}" />
-
+                            <TextBox Width="220"
+                     Text="{Binding NewContactPerson}" />
                         </StackPanel>
 
                     </WrapPanel>
 
+                    <!-- Row 2 -->
+
+                    <WrapPanel Margin="0,0,0,10">
+
+                        <StackPanel Margin="0,0,15,0">
+
+                            <TextBlock Text="Meeting Link / Address"
+                   Margin="0,0,0,5"/>
+
+                            <TextBox Width="1050"
+                 Text="{Binding NewLocation}" />
+
+                        </StackPanel>
+
+                        <StackPanel>
+
+                            <TextBlock Text="Status"
+                   Margin="0,0,0,5"/>
+
+                            <TextBox Width="120"
+                 Text="{Binding NewStatus}" />
+
+                        </StackPanel>
+
+                    </WrapPanel>
+                    <!-- Row 3 -->
+
                     <StackPanel Margin="0,0,0,15">
 
                         <TextBlock Text="Notes"
-                                   Margin="0,0,0,5"/>
+                   Margin="0,0,0,5"/>
 
                         <TextBox Height="70"
-                                 TextWrapping="Wrap"
-                                 AcceptsReturn="True"
-                                 Text="{Binding NewNotes}" />
+                 Width="1320"
+                 TextWrapping="Wrap"
+                 AcceptsReturn="True"
+                 Text="{Binding NewNotes}" />
 
                     </StackPanel>
 
