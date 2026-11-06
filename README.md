@@ -867,8 +867,35 @@ Andernfalls wird ein neues Unternehmen erstellt, der Collection hinzugefügt, in
 
 ---
 
-# 22. Probleme und Lösungen
+# 22. Debugging
 
+Während der Entwicklung des Projekts traten verschiedene technische Probleme auf. Die meisten Fehler konnten mit Hilfe von Visual Studio, der Fehlerliste und dem integrierten Debugger analysiert und behoben werden.
+
+![Debugging](Images/Debugging.png)
+
+## Debugging Beispiel – JSON-Persistenz
+
+### Problem
+
+Während der Implementierung der JSON-Persistenz konnte die Anwendung nicht gestartet werden. Visual Studio zeigte mehrere Fehlermeldungen an und das Projekt ließ sich nicht erfolgreich kompilieren.
+
+
+### Fehlermeldung
+
+```text
+CS0234:
+Der Typ- oder Namespacename "Json"
+ist im Namespace "System.Text" nicht vorhanden.
+```
+
+### Ursache
+
+Für die Speicherung der Daten sollte die Bibliothek System.Text.Json verwendet werden.
+...
+
+---
+
+# 23. Probleme und Lösungen
 ## Problem 1: Daten gingen nach dem Schließen der Anwendung verloren
 
 Zu Beginn wurden alle Daten ausschließlich im Arbeitsspeicher gespeichert. Nach dem Schließen der Anwendung gingen sämtliche Informationen verloren.
@@ -899,7 +926,7 @@ Durch den Einsatz des MVVM-Musters wurden die einzelnen Bereiche sauber voneinan
 
 ---
 
-# 23. Verwendete Quellen
+# 24. Verwendete Quellen
 
 ## Microsoft Dokumentation
 
@@ -931,7 +958,7 @@ Durch den Einsatz des MVVM-Musters wurden die einzelnen Bereiche sauber voneinan
 
 ---
 
-# 24. Fazit
+# 25. Fazit
 
 Bewerbro ist eine moderne WPF-Anwendung zur Verwaltung des gesamten Bewerbungsprozesses.
 

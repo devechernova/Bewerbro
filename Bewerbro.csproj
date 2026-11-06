@@ -189,6 +189,9 @@
   <ItemGroup>
     <Resource Include="Images\Flowchart_Add_Company.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Debugging.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets" Condition="Exists('packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
