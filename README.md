@@ -763,7 +763,53 @@ Zentrale Steuerung von Benutzeraktionen.
 
 ---
 
-# 18. UML-Klassendiagramm
+# 18. Wireframe
+
+Der folgende Wireframe zeigt den ursprünglichen Entwurf des Dashboard-Moduls vor Beginn der Implementierung.
+
+![Wireframe Dashboard](Images/Wireframe_Dashboard_Modul.png)
+
+## Beschreibung
+
+Der Wireframe diente als Grundlage für die Planung der Benutzeroberfläche.
+
+Geplant wurden folgende Bereiche:
+
+- Bewerbungen
+- Interviews
+- Zusagen
+- Absagen
+
+Zusätzlich wurde eine Refresh-Funktion vorgesehen, um Statistiken zu aktualisieren.
+
+## Finale Umsetzung
+
+Die folgende Abbildung zeigt die tatsächlich umgesetzte Version des Dashboards.
+
+![Dashboard Final](Images/Dashboard_Final.png)
+
+### Vergleich zwischen Wireframe und finaler Umsetzung
+
+Die finale Anwendung orientiert sich am ursprünglichen Wireframe.
+
+Folgende Elemente wurden übernommen:
+
+- Dashboard-Überschrift
+- Anzeige der Bewerbungen
+- Anzeige der Interviews
+- Anzeige der Zusagen
+- Anzeige der Absagen
+
+Während der Entwicklung wurden zusätzliche Funktionen ergänzt:
+
+- Refresh-Funktion
+- JSON-Persistenz
+- MVVM-Architektur
+- modernes UI-Design
+- dynamische Datenbindung
+
+
+# 19. UML-Klassendiagramm
 
 Das folgende Klassendiagramm zeigt die wichtigsten Entitäten des Projekts sowie deren Beziehungen.
 
@@ -786,7 +832,7 @@ Beziehungen:
 
 ---
 
-# 19. Zeitplanung
+# 20. Zeitplanung
 
 | Datum | Tätigkeit |
 |---------|---------|
@@ -805,7 +851,7 @@ Beziehungen:
 
 ---
 
-# 20. Probleme und Lösungen
+# 21. Probleme und Lösungen
 
 ## Problem 1: Daten gingen nach dem Schließen der Anwendung verloren
 
@@ -837,7 +883,7 @@ Durch den Einsatz des MVVM-Musters wurden die einzelnen Bereiche sauber voneinan
 
 ---
 
-# 21. Verwendete Quellen
+# 22. Verwendete Quellen
 
 ## Microsoft Dokumentation
 
@@ -869,7 +915,7 @@ Durch den Einsatz des MVVM-Musters wurden die einzelnen Bereiche sauber voneinan
 
 ---
 
-# 22. Fazit
+# 23. Fazit
 
 Bewerbro ist eine moderne WPF-Anwendung zur Verwaltung des gesamten Bewerbungsprozesses.
 

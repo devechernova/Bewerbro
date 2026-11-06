@@ -180,6 +180,12 @@
   <ItemGroup>
     <Resource Include="Images\UML_Klassendiagramm_Bewerbro.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Wireframe_Dashboard_Modul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Dashboard_Final.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets" Condition="Exists('packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
