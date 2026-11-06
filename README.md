@@ -1,6 +1,6 @@
 ﻿# Bewerbro - Dein smarter Bewerbungsassistent
 
-## Projektbeschreibung
+## 1. Projektbeschreibung
 
 **Bewerbro** ist eine Desktop-Anwendung zur Verwaltung des gesamten Bewerbungsprozesses.
 
@@ -16,7 +16,7 @@ Das Projekt wurde mit **C#**, **WPF** und dem **MVVM-Pattern (Model-View-ViewMod
 
 ---
 
-# Projektziel
+# 2. Projektziel
 
 Ziel der Anwendung ist die zentrale Verwaltung aller Informationen rund um den Bewerbungsprozess.
 
@@ -31,7 +31,7 @@ Die Software dient als persönlicher Bewerbungsassistent und ermöglicht eine st
 
 ---
 
-# Verwendete Technologien
+# 3. Verwendete Technologien
 
 ## Programmiersprache
 
@@ -65,7 +65,7 @@ JSON
 
 ---
 
-# Softwarearchitektur
+# 4. Softwarearchitektur
 
 Die Anwendung basiert auf dem **MVVM-Pattern**.
 
@@ -108,7 +108,7 @@ Aufgaben:
 
 ---
 
-# Projektstruktur
+# 5. Projektstruktur
 
 ```text
 Bewerbro
@@ -161,7 +161,7 @@ Bewerbro
 
 ---
 
-# Beschreibung der Projektordner
+# 6. Beschreibung der Projektordner
 
 ## Commands
 
@@ -199,7 +199,7 @@ Accepted
 
 ---
 
-# Models
+# 7. Models
 
 Die Models repräsentieren die Datenobjekte der Anwendung.
 
@@ -318,7 +318,7 @@ Speichert persönliche Notizen zum Bewerbungsprozess.
 
 ---
 
-# Services
+# 8. Services
 
 Die Services übernehmen die Datenpersistenz der Anwendung.
 
@@ -390,7 +390,7 @@ Aufgabe:
 
 ---
 
-# ViewModels
+# 9. ViewModels
 
 ## BaseViewModel.cs
 
@@ -539,7 +539,7 @@ Interview löschen.
 
 ---
 
-# Implementierte Module
+# 10. Implementierte Module
 
 ## Dashboard
 
@@ -595,7 +595,7 @@ Funktionen:
 
 ---
 
-# CRUD-Implementierung
+# 11. CRUD-Implementierung
 
 Für die Module
 
@@ -623,7 +623,7 @@ Datensätze löschen.
 
 ---
 
-# Datenpersistenz
+# 12. Datenpersistenz
 
 Alle Daten werden lokal als JSON-Dateien gespeichert.
 
@@ -644,7 +644,7 @@ Vorteile:
 
 ---
 
-# Datenbindung (Binding)
+# 13. Datenbindung
 
 Das Projekt nutzt WPF Data Binding.
 
@@ -662,7 +662,7 @@ Vorteile:
 
 ---
 
-# Command Pattern
+# 14. Command Pattern
 
 Alle Benutzeraktionen werden über Commands ausgeführt.
 
@@ -690,7 +690,7 @@ Vorteile:
 
 ---
 
-# Besondere technische Merkmale
+# 15. Besondere technische Merkmale
 
 ## MVVM
 
@@ -722,7 +722,7 @@ Zentrale Steuerung von Benutzeraktionen.
 
 ---
 
-# Aktueller Projektstatus
+# 16. Aktueller Projektstatus
 
 ## Abgeschlossen
 
@@ -750,7 +750,7 @@ Zentrale Steuerung von Benutzeraktionen.
 
 ---
 
-# Geplante Erweiterungen
+# 17. Geplante Erweiterungen
 
 - automatische Dashboard-Aktualisierung ohne Refresh
 - vollständige Verknüpfung über IDs:
@@ -763,10 +763,126 @@ Zentrale Steuerung von Benutzeraktionen.
 
 ---
 
-# Fazit
+# 18. UML-Klassendiagramm
+
+Das folgende Klassendiagramm zeigt die wichtigsten Entitäten des Projekts sowie deren Beziehungen.
+
+![UML Klassendiagramm](Images/UML_Klassendiagramm_Bewerbro.png)
+
+## Beschreibung des Klassendiagramms
+
+Die Klasse CompanyItem speichert Informationen über Unternehmen.
+
+Jedes Unternehmen kann mehrere Bewerbungen besitzen.
+
+Die Klasse ApplicationItem verwaltet Bewerbungen und enthält Informationen zur Position, zum Bewerbungsstatus und zum Bewerbungsdatum.
+
+Die Klasse InterviewItem speichert Vorstellungsgespräche einschließlich Termin, Ansprechpartner, Status und Notizen.
+
+Beziehungen:
+
+- CompanyItem (1) → (n) ApplicationItem
+- ApplicationItem (1) → (n) InterviewItem
+
+---
+
+# 19. Zeitplanung
+
+| Datum | Tätigkeit |
+|---------|---------|
+| 30.10.2026 | Projektidee definiert und Projektstruktur geplant |
+| 31.10.2026 | Erstellung der WPF-Navigation und Dashboard-Seite |
+| 01.11.2026 | Entwicklung des Companies-Moduls |
+| 02.11.2026 | Implementierung der CRUD-Funktionen für Companies |
+| 03.11.2026 | Implementierung der JSON-Persistenz für Companies |
+| 04.11.2026 | Entwicklung des Applications-Moduls |
+| 05.11.2026 | Implementierung von CRUD und JSON-Persistenz für Applications |
+| 05.11.2026 | Entwicklung des Interviews-Moduls |
+| 05.11.2026 | Implementierung von CRUD und JSON-Persistenz für Interviews |
+| 05.11.2026 | Erstellung der Projektdokumentation |
+| 05.11.2026 | Erstellung des UML-Klassendiagramms |
+| 05.11.2026 | Projektfinalisierung und Tests |
+
+---
+
+# 20. Probleme und Lösungen
+
+## Problem 1: Daten gingen nach dem Schließen der Anwendung verloren
+
+Zu Beginn wurden alle Daten ausschließlich im Arbeitsspeicher gespeichert. Nach dem Schließen der Anwendung gingen sämtliche Informationen verloren.
+
+### Lösung
+
+Es wurde eine Persistenzschicht auf Basis von JSON-Dateien implementiert. Die Daten werden nun automatisch in den Dateien companies.json, applications.json und interviews.json gespeichert und beim Start der Anwendung wieder geladen.
+
+---
+
+## Problem 2: Standard-WPF-Design passte nicht zum gewünschten Erscheinungsbild
+
+Die Standard-TextBoxen und Buttons verwendeten die Windows-Standardeinstellungen mit blauer Hervorhebung.
+
+### Lösung
+
+Eigene Styles und ControlTemplates wurden erstellt. Dadurch wurde das Erscheinungsbild an die Farbpalette der Anwendung angepasst.
+
+---
+
+## Problem 3: Verwaltung mehrerer Datenbereiche
+
+Die Anwendung verwaltet Unternehmen, Bewerbungen und Interviews.
+
+### Lösung
+
+Durch den Einsatz des MVVM-Musters wurden die einzelnen Bereiche sauber voneinander getrennt und in eigene Models, Views, ViewModels und Services aufgeteilt.
+
+---
+
+# 21. Verwendete Quellen
+
+## Microsoft Dokumentation
+
+- Microsoft Learn – WPF Documentation
+- Microsoft Learn – Data Binding
+- Microsoft Learn – ICommand Interface
+- Microsoft Learn – INotifyPropertyChanged
+- Microsoft Learn – ObservableCollection
+
+## JSON
+
+- Microsoft Learn – System.Text.Json
+
+## Entwicklung und Problemlösung
+
+- Stack Overflow
+- GitHub Documentation
+
+## KI-Unterstützung
+
+- Microsoft Copilot
+- ChatGPT
+
+## Entwicklungsumgebung
+
+- Microsoft Visual Studio 2022
+- Git
+- GitHub
+
+---
+
+# 22. Fazit
 
 Bewerbro ist eine moderne WPF-Anwendung zur Verwaltung des gesamten Bewerbungsprozesses.
 
 Durch die Verwendung von C#, WPF, MVVM, Commands, Data Binding und JSON-Persistenz wurde eine strukturierte und erweiterbare Softwarelösung entwickelt.
 
 Die Anwendung ermöglicht die Verwaltung von Unternehmen, Bewerbungen und Vorstellungsgesprächen innerhalb einer zentralen Plattform und unterstützt Anwenderinnen und Anwender dabei, ihren Bewerbungsprozess effizient und übersichtlich zu organisieren.
+
+Während der Umsetzung wurden wichtige Konzepte der Softwareentwicklung praktisch angewendet, insbesondere:
+
+- Objektorientierte Programmierungta Binding
+- Command Pattern
+- CRUD-Operationen
+- JSON-Persistenz
+- Git-Versionierung
+
+Durch die modulare Architektur kann die Anwendung zukünftig problemlos erweitert werden. Geplante Erweiterungen umfassen die vollständige Verknüpfung der Entitäten über IDs, Dokumentenverwaltung, Statistikfunktionen sowie eine mögliche Datenbankanbindung.
