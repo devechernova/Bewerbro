@@ -832,7 +832,23 @@ Beziehungen:
 
 ---
 
-# 20. Zeitplanung
+# 20. Flowchart
+
+Der folgende Flowchart zeigt den Ablauf der Funktion "Add Company".
+
+![Flowchart Add Company](Images/Flowchart_Add_Company.png)
+
+## Beschreibung
+
+Der Benutzer klickt auf die Schaltfläche "Add Company".
+
+Anschließend wird überprüft, ob ein Firmenname eingegeben wurde.
+
+Ist das Feld leer, wird der Vorgang beendet.
+
+Andernfalls wird ein neues Unternehmen erstellt, der Collection hinzugefügt, in der JSON-Datei gespeichert und die Eingabefelder werden zurückgesetzt.
+
+# 21. Zeitplanung
 
 | Datum | Tätigkeit |
 |---------|---------|
@@ -851,7 +867,7 @@ Beziehungen:
 
 ---
 
-# 21. Probleme und Lösungen
+# 22. Probleme und Lösungen
 
 ## Problem 1: Daten gingen nach dem Schließen der Anwendung verloren
 
@@ -883,7 +899,7 @@ Durch den Einsatz des MVVM-Musters wurden die einzelnen Bereiche sauber voneinan
 
 ---
 
-# 22. Verwendete Quellen
+# 23. Verwendete Quellen
 
 ## Microsoft Dokumentation
 
@@ -915,7 +931,7 @@ Durch den Einsatz des MVVM-Musters wurden die einzelnen Bereiche sauber voneinan
 
 ---
 
-# 23. Fazit
+# 24. Fazit
 
 Bewerbro ist eine moderne WPF-Anwendung zur Verwaltung des gesamten Bewerbungsprozesses.
 
